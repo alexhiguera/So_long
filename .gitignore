@@ -2,6 +2,7 @@
 *.o
 *.dSYM/
 *.exe
+*.a
 
 # Ignorar archivos de respaldo y temporales
 *~
