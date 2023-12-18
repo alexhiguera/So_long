@@ -6,28 +6,29 @@
 #    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2023/12/13 16:22:02 by ahiguera         ###   ########.fr        #
+#    Updated: 2023/12/18 17:43:25 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long.a
-INCLUDE = so_long.h
 CFLAGS = -Wall -Wextra -Werror -framework OpenGL -framework AppKit 
-#-Whon Deprecated
-LIBFT_DIR = ../includes/libft
-MLX_DIR = ../includes/includes/minilibx/mlx
 
+NAME = so_long
 SRC = ../test/test_open_window.c
+INCLUDE = so_long.h
+
+MLX_DIR = ../includes/minilibx
+MLX = $(MLX_DIR)/libmlx.a
 
 #libft:
 #    make all clean -C $(LIBFT_DIR)
 
-$(NAME): 
-	gcc $(CFLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
 
-MLX = $(MLX_DIR)/libmlx.a
+$(NAME): $(MLX) $(SRC) $(INCLUDE)
+	gcc $(CFLAGS) $(SRC) $(MLX) -o $(NAME)
 
-all: $(NAME) $(MLX)
+$(MLX):
+	make -s -C $(MLX_DIR) all
 
 clean:
 	rm -f $(NAME) $(MLX)
