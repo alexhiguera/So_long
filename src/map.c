@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/12/19 17:47:14 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:36:28 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
  */
 void	ft_print_map(t_map *map)
 {
-	int row_len;
-	int cols_len;
+	int	row_len;
+	int	cols_len;
 
 	row_len = 0;
 	while (row_len < map->rows)
