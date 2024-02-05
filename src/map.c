@@ -6,32 +6,56 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/01/10 13:36:28 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:17:16 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/so_long.h"
 
-/**
- * Prints the map to the standard output.
- *
- * @param map The map structure containing the map data.
- */
-void	ft_print_map(t_map *map)
+void	ft_print_map(char *file)
 {
-	int	row_len;
-	int	cols_len;
+	size_t	i;
+	int		fd;
+	char	*map_save;
 
-	row_len = 0;
-	while (row_len < map->rows)
+	i = 0;
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
 	{
-		cols_len = 0;
-		while (cols_len < map->cols)
-		{
-			ft_putchar_fd(map->map[row_len][cols_len], 1);
-			cols_len++;
-		}
-		ft_putchar_fd('\n', 1);
-		row_len++;
+		printf("Error opening file");
+		return ;
 	}
+	while (1)
+	{
+		map_save = get_next_line(fd);
+		printf("resultado 1:\n%i \n", fd);
+		i++;
+	}
+	close(fd);
+	printf("resultado 2:\n%s \n", map_save);
+}
+
+int	file_extension_verification(char *file, char *extension)
+{
+	size_t	extension_len;
+	size_t	file_len;
+	size_t	i;
+
+	extension_len = ft_strlen(extension);
+	file_len = ft_strlen(file);
+	i = 0;
+	while (i < extension_len)
+	{
+		if (file[file_len - extension_len + i] != extension[i])
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc > 1)
+		printf("resultado: %i\n", file_extension_verification(argv[1], ".ber"));
+	return (0);
 }
