@@ -31,3 +31,4 @@ config.env
 # Ignorar archivos de respaldo de bases de datos
 *.bak
 *.sql.bak
+so_long
