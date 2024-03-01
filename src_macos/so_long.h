@@ -6,7 +6,7 @@
 /*   By: columbux <columbux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:16:32 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/01 18:03:12 by columbux         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:05:37 by columbux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,35 @@
 # define KEY_DOWN 125
 # define KEY_RIGHT 124
 # define KEY_LEFT 123
+
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}			t_pos;
+
+typedef struct s_game
+{
+	char		**matrix;
+	int			collect_count;
+	int			player_count;
+	int			exit_count;
+	int			x;
+	int			y;
+	int			height;
+	int			width;
+	int			step;
+
+	void		*floor;
+	void		*wall;
+	void		*collectables;
+	void		*exit;
+	void		*player;
+
+	t_pos		player_pos;
+
+	void		*mlx_ptr;
+	void		*win_ptr;
+}				t_game;
 
 #endif

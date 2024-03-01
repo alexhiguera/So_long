@@ -23,5 +23,35 @@
 # define KEY_RIGHT 124
 # define KEY_LEFT 123
 
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}			t_pos;
+
+typedef struct s_game
+{
+	char		**matrix;
+	int			collect_count;
+	int			player_count;
+	int			exit_count;
+	int			x;
+	int			y;
+	int			height;
+	int			width;
+	int			step;
+
+	void		*floor;
+	void		*wall;
+	void		*collectables;
+	void		*exit;
+	void		*player;
+
+	t_pos		player_pos;
+
+	void		*mlx_ptr;
+	void		*win_ptr;
+}				t_game;
+
 #endif
 
