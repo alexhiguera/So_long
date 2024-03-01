@@ -6,7 +6,7 @@
 #    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/01 17:36:46 by columbux         ###   ########.fr        #
+#    Updated: 2024/03/01 17:43:41 by columbux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,7 @@ ifeq ($(shell uname), Linux)
 #   for LINUX
 #	Install dependencies with `make dependencies`
 	MLXFLAGS		= 		-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-	SRC		 		= 		./test/test_map.c
-	OBJ				= 		${SRC:.c=.o}
+	SRC_DIR			=		./srcs_linux/
 
 	MLX_DIR		 	= 		./includes/mlx_linux/
 	MLX				= 		$(MLX_DIR)/libmlx.a
@@ -40,8 +39,7 @@ ifeq ($(shell uname), Linux)
 ifeq ($(shell uname), Darwin)
 #   for MACos
 	MLXFLAGS		= 		-framework OpenGL -framework AppKit -g -fsanitize=address
-	SRC		 		= 		./src_macos/map.c
-	OBJ				= 		${SRC:.c=.o}
+	SRC_DIR		=		./srcs_macos/
 
 	MLX_DIR		 	= 		./includes/mlx_macos/
 	MLX_M			= 		$(MLX_DIR)/libmlx.a
@@ -52,6 +50,8 @@ else
 
 endif
 
+SRC		 		= 		$(SRC_DIR)test_map.c
+OBJ				= 		${SRC:.c=.o}
 
 all:			$(NAME)
 
