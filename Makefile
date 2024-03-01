@@ -6,7 +6,7 @@
 #    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/01 17:46:44 by columbux         ###   ########.fr        #
+#    Updated: 2024/03/01 17:48:40 by columbux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ ifeq ($(shell uname), Linux)
 ifeq ($(shell uname), Darwin)
 #   for MACos
 	MLXFLAGS		= 		-framework OpenGL -framework AppKit -g -fsanitize=address
-	SRC_DIR		=		./srcs_macos/
+	SRC_DIR			=		./srcs_macos/
 
 	MLX_DIR		 	= 		./includes/mlx_macos/
 	MLX_M			= 		$(MLX_DIR)/libmlx.a
