@@ -39,8 +39,6 @@ Once compiled, run the program, and you can interact with the window using the k
 <!-- TODO: pendiente explicar uso -->
 
 
----
-
 ## Sprites 🎞️
 
 The images of the sprites must be in ``.xpm`` format. If you want to create your sprites, follow these steps:
@@ -49,8 +47,6 @@ The images of the sprites must be in ``.xpm`` format. If you want to create your
 2. Resize them in any editing program to ``64px x 64px``.
 (``64px`` is not arbitrary; my project is defined like that, check what you need in your case).
 3. Transform to the ``.xpm`` format through [Convertio](https://convertio.co/es/png-xpm/).
-
----
 
 ## Controls 🎮
 
@@ -63,7 +59,6 @@ The images of the sprites must be in ``.xpm`` format. If you want to create your
 | `D` or ➡️  |   Move right		|      
 | `Q` or Esc |   Close the game  | 
 
----
 ## Map 🗺️
 
 You can create another map if you wish, as it can analyze any type of map, as long as it follows these rules:
