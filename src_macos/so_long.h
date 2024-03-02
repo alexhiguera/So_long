@@ -6,7 +6,7 @@
 /*   By: columbux <columbux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:16:32 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/01 18:05:37 by columbux         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:57:27 by columbux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # define KEY_DOWN 125
 # define KEY_RIGHT 124
 # define KEY_LEFT 123
+# define KEY_Q 12
+# define KEY_R 15
 
 typedef struct s_pos
 {
@@ -64,5 +66,32 @@ typedef struct s_game
 	void		*mlx_ptr;
 	void		*win_ptr;
 }				t_game;
+
+//so_long.c
+void	so_print_map(char **map);
+int		so_exit(t_game *map);
+
+//map.c
+int		so_reading_the_map(t_game *map, char **av);
+
+//map_errors.c
+void	so_check_errors(t_game *map);
+
+//map_errors_aux.c
+void	so_print_error(int type);
+int		so_horizontal_walls(t_game *map);
+int		so_vertical_walls(t_game *map);
+void	so_count_checker(t_game *map, int width, int height);
+void	so_character_checker(t_game *map, int width, int height);
+
+//map_flood_fill.c
+void	so_flood_fill(t_game *map);
+
+//map_images.c
+void	so_put_images(t_game *map);
+int		so_add_to_win(t_game *map);
+
+//map_hooks.c
+int		so_hook(int key, t_game *map);
 
 #endif
