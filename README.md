@@ -88,11 +88,6 @@ ejemplo:
 	111C01E00C1
 	11111111111
 
-## Contact 📩
-
-Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.
-
-
 
 <!-- # So Long
 
