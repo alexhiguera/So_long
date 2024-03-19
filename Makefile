@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
+#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/02 18:38:20 by columbux         ###   ########.fr        #
+#    Updated: 2024/03/08 15:23:28 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ ifeq ($(shell uname), Linux)
 else ifeq ($(shell uname), Darwin)
 #   for MACos                                   							   #
 	OS				=		MacOS
-	MLXFLAGS		= 		-framework OpenGL -framework AppKit -g -fsanitize=address
+	MLXFLAGS		= 		-framework OpenGL -framework AppKit
+	CLEANFLAGS		=		-g -fsanitize=address
 	SRC_DIR			=		./src_macos/
 	MLX_DIR		 	= 		./includes/mlx_macos/
 	MLX				= 		$(MLX_DIR)/libmlx.a
