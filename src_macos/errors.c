@@ -6,13 +6,13 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 22:10:35 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:49:37 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_free(t_game *game)
+void	so_free(t_game *game)
 {
 	int	y;
 
@@ -23,10 +23,16 @@ void	ft_free(t_game *game)
 	game->map.map = NULL;
 }
 
-void	handler_errors(t_game *game)
+void	so_handler_errors(t_game *game)
 {
 	if (game->player.c_collects != game->player.tokens
 		|| game->player.exit == false)
-		ft_error("Map cant played");
-	ft_free(game);
+		so_error("Map cant played");
+	so_free(game);
+}
+
+void	so_error(char *message)
+{
+	ft_printf("%s", message);
+	exit(1);
 }
