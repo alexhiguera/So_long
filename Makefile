@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/30 22:54:05 by alex             ###   ########.fr        #
+#    Updated: 2024/03/30 23:09:31 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ $(NAME): 	$(SRC)
 				@make -C $(LIBFT)
 				@mv $(MLX)/libmlx.a bin/
 				@mv $(LIBFT)libft.a bin/
-				@$(CC) $(CFLAGS) $(CLEANFLAGS) $(MLXFLAGS) $(BIN)* $(SRC) -o $(NAME)
+				@$(CC) $(CFLAGS) $(MLXFLAGS) $(BIN)* $(SRC) -o $(NAME)
 				@echo "$(GREEN)So_long Compiled! 🚀$(WHITE)\n"
 
 clean:
@@ -93,12 +93,16 @@ re: 		fclean all
 normi:
 						@echo $(YELLOW) "Norminette...\n"
 						norminette $(SRC)
-						@echo $(GREEN)"\nNorminette Done!\n"
+						@echo "$(GREEN)\nNorminette Done!\n"
 
 dependencies:
 						sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
-						@echo $(GREEN)"Dependencies installed!"
+						@echo "$(GREEN)Dependencies installed!"
 
 wsl2:
 						export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-						@echo $(GREEN)"WSL configured!"
+
+play:
+						clear					
+						@make re
+						@./so_long assets/maps/map1.ber
