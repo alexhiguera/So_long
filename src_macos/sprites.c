@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 23:22:52 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:58:45 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	charge_sprites(t_game *game)
 	game->img.wall = mlx_xpm_file_to_image(game->mlx, WALL, &(x), &(y));
 }
 
-static void	put_images(t_game *game, int x, int y)
+static void	sprites_in_map(t_game *game, int x, int y)
 {
 	char	current;
 
@@ -57,7 +57,7 @@ void	so_print_sprites(t_game *game)
 		x = 0;
 		while (game->map.map[y][x] != 0)
 		{
-			put_images(game, x, y);
+			sprites_in_map(game, x, y);
 			x++;
 		}
 		y++;

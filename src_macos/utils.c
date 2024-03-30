@@ -6,13 +6,13 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 22:11:03 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:55:23 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	get_player(t_game *game)
+void	so_get_player(t_game *game)
 {
 	int	y;
 	int	x;
@@ -35,14 +35,14 @@ void	get_player(t_game *game)
 	}
 }
 
-int	destroy_window(t_game *game)
+int	so_destroy_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	mlx_destroy_image(game->mlx, game->img.exit);
 	mlx_destroy_image(game->mlx, game->img.collects);
 	mlx_destroy_image(game->mlx, game->img.floor);
 	mlx_destroy_image(game->mlx, game->img.player);
-	ft_free(game);
+	so_free(game);
 	exit(EXIT_SUCCESS);
 }
 

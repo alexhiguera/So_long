@@ -6,25 +6,25 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 22:10:21 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:52:55 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_extension(char *argv1, t_game *game)
+void	so_check_extension(char *argv1, t_game *game)
 {
 	int	i;
 
 	i = ft_strlin(argv1);
 	if (ft_strncmp(&argv1[i - 4], ".ber", 4) != 0)
 	{
-		ft_error("Error\n Map file must have .ber extension \n");
+		so_error("Error\n Map file must have .ber extension \n");
 	}
 	game->map.path = argv1;
 }
 
-void	get_len(t_game *game)
+void	so_get_len(t_game *game)
 {
 	int		fd;
 	char	*line;
@@ -33,17 +33,17 @@ void	get_len(t_game *game)
 	fd = 0;
 	fd = open(game->map.path, O_RDONLY | O_NOFOLLOW);
 	if (fd < 0)
-		ft_error("Error\nMap not found\n");
+		so_error("Error\nMap not found\n");
 	line = get_next_line(fd);
 	if (!line)
-		ft_error("Error\nMap is empty\n");
+		so_error("Error\nMap is empty\n");
 	game->map.x = ft_strlin(line) - 1;
 	while (line)
 	{
 		if (line[ft_strlin(line) - 1] == '\n')
 			line[ft_strlin(line) - 1] = '\0';
 		if (ft_strlin(line) != game->map.x)
-			ft_error("Error\nMap on x is irregular\n");
+			so_error("Error\nMap on x is irregular\n");
 		game->map.y++;
 		tmp = line;
 		line = get_next_line(fd);

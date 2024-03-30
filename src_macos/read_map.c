@@ -6,13 +6,13 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 22:09:43 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:54:51 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	read_map(t_game *game)
+void	so_read_map(t_game *game)
 {
 	int		i;
 	int		fd;
@@ -21,13 +21,13 @@ void	read_map(t_game *game)
 	fd = 0;
 	fd = open(game->map.path, O_RDONLY);
 	if (fd < 0)
-		ft_error("Error\nMap not found\n");
+		so_error("Error\nMap not found\n");
 	game->map.map = (char **)malloc(sizeof(char *) * (game->map.y + 1));
 	if (!game->map.map)
 		return ;
 	line = get_next_line(fd);
 	if (!line)
-		ft_error("Error\nMap is empty\n");
+		so_error("Error\nMap is empty\n");
 	i = 0;
 	while (i < game->map.y)
 	{
@@ -39,7 +39,7 @@ void	read_map(t_game *game)
 	close(fd);
 }
 
-void	check_perimeter(t_game *game)
+void	so_check_perimeter(t_game *game)
 {
 	int	x;
 	int	y;
@@ -49,13 +49,13 @@ void	check_perimeter(t_game *game)
 	while (x--)
 	{
 		if (game->map.map[0][x] != '1' || game->map.map[y - 1][x] != '1')
-			ft_error("Error\nMap is not closed\n");
+			so_error("Error\nMap is not closed\n");
 	}
 	while (y--)
 	{
 		if (game->map.map[y][0] != '1' || game->map.map[y][game->map.x
 			- 1] != '1')
-			ft_error("Error\nMap is not closed\n");
+			so_error("Error\nMap is not closed\n");
 	}
 }
 
@@ -63,10 +63,10 @@ void	check_other_things(t_game *game, int y, int x)
 {
 	if (game->map.map[y][x] != '1' && game->map.map[y][x] != '0'
 		&& game->map.map[y][x] != '\n')
-		ft_error("Error\nChar on map Invalid\n");
+		so_error("Error\nChar on map Invalid\n");
 }
 
-void	count_things(t_game *game)
+void	so_count_things(t_game *game)
 {
 	int	x;
 	int	y;
@@ -91,5 +91,5 @@ void	count_things(t_game *game)
 	}
 	if (game->map.player != 1 || game->map.count != 1
 		|| game->player.c_collects < 1 || game->map.count != 1)
-		ft_error("Error\nInvalid map\n");
+		so_error("Error\nInvalid map\n");
 }
