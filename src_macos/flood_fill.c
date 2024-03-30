@@ -6,13 +6,13 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 22:10:28 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:33:40 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	handler_recursivity(t_game *game, int y, int x)
+static void	handler_recursivity(t_game *game, int y, int x)
 {
 	if (game->map.map[y][x] == '1' || game->map.map[y][x] == 'F')
 		return ;
@@ -27,7 +27,7 @@ void	handler_recursivity(t_game *game, int y, int x)
 	handler_recursivity(game, y, x - 1);
 }
 
-void	handler_ff(t_game *game)
+void	so_flood_fill(t_game *game)
 {
 	handler_recursivity(game, game->player.y, game->player.x);
 }
