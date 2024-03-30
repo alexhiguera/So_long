@@ -27,3 +27,4 @@ config.env
 
 # Ignore binary and executable files
 so_long
+bin
