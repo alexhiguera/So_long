@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/30 23:17:17 by alex             ###   ########.fr        #
+#    Updated: 2024/03/30 23:51:39 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,8 +91,8 @@ re: 		fclean all
 #█████████████████████████████ Custom rules ████████████████████████████████████#
 
 normi:
-						@echo $(YELLOW) "Norminette...\n"
-						norminette $(SRC)
+						@echo "$(YELLOW)Norminette...\n$(WHITE)"
+						@norminette $(SRC)
 						@echo "$(GREEN)\nNorminette Done!\n"
 
 dependencies:
