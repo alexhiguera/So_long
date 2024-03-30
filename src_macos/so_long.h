@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:16:32 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 20:40:51 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/30 23:55:23 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include "../includes/mlx_macos/mlx.h"
 # include <fcntl.h>
 # include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+
 # define WALL "assets/sprites/wall.xpm"
 # define FLOOR "assets/sprites/flor.xpm"
 # define PLAYER "assets/sprites/player.xpm"
@@ -75,24 +73,39 @@ typedef struct s_game
 	t_player	player;
 }				t_game;
 
-void			check_extension(char *argv1, t_game *game);
-void			get_len(t_game *game);
-void			ft_error(char *message);
-void			read_map(t_game *game);
-void			check_perimeter(t_game *game);
-void			count_things(t_game *game);
-void			get_player(t_game *game);
-void			handler_ff(t_game *game);
-void			handler_errors(t_game *game);
-void			get_images(t_game *game);
-int				destroy_window(t_game *game);
-int				handler_keys(int keycode, t_game *game);
-void			ft_free(t_game *game);
+// errors.c
+void			so_free(t_game *game);
+void			so_handler_errors(t_game *game);
+void			so_error(char *message);
+
+// flood_fill.c
+void			so_flood_fill(t_game *game);
+
+// getmap.c
+void			so_check_extension(char *argv1, t_game *game);
+void			so_get_len(t_game *game);
+
+// keys.c
+int				so_handler_keys(int keycode, t_game *game);
+
+//put_things.c
 void			put_player_exit(t_game *game, int x, int y);
 void			put_player(t_game *game, int x, int y);
 void			put_exit(t_game *game, int x, int y);
 void			put_collects(t_game *game, int x, int y);
 void			put_wall(t_game *game, int x, int y);
 void			put_floor(t_game *game, int x, int y);
+
+//read_map.c
+void			so_read_map(t_game *game);
+void			so_check_perimeter(t_game *game);
+void			so_count_things(t_game *game);
+
+// sprites.c
+void			so_print_sprites(t_game *game);
+
+// utils.c
+void			so_get_player(t_game *game);
+int				so_destroy_window(t_game *game);
 
 #endif
