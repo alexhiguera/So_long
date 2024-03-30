@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 23:55:23 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/31 00:07:38 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	check_number_of_args(int argc)
 	}
 }
 
-void	hooks(t_game *game)
+static void	hooks(t_game *game)
 {
 	mlx_hook(game->mlx_win, 17, 1, so_destroy_window, game);
 	mlx_hook(game->mlx_win, 2, 1, so_handler_keys, game);
