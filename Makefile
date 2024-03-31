@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/31 00:09:30 by alex             ###   ########.fr        #
+#    Updated: 2024/03/31 01:34:47 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,4 +105,4 @@ wsl2:
 play:
 						clear					
 						@make re
-						@./so_long assets/maps/map1.ber
+						@./so_long assets/maps/finish_map.ber
