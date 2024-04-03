@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:16:32 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 23:55:23 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 01:48:37 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "../includes/Libft_2.0/src/libft.h"
 # include "../includes/mlx_macos/mlx.h"
 # include <fcntl.h>
-# include <stdbool.h>
 
 # define WALL "assets/sprites/wall.xpm"
 # define FLOOR "assets/sprites/flor.xpm"
