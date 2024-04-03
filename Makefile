@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/31 01:34:47 by alex             ###   ########.fr        #
+#    Updated: 2024/04/04 01:49:20 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ $(NAME): 	$(SRC)
 				@make -C $(LIBFT)
 				@mv $(MLX)/libmlx.a bin/
 				@mv $(LIBFT)libft.a bin/
-				@$(CC) $(CFLAGS) $(MLXFLAGS) $(BIN)* $(SRC) -o $(NAME)
+				@$(CC) $(CFLAGS) $(MLXFLAGS) $(CLEANFLAGS) $(BIN)* $(SRC) -o $(NAME)
 				@echo "$(GREEN)So_long Compiled! 🚀$(WHITE)\n"
 
 clean:
@@ -86,7 +86,7 @@ fclean: 	clean
 
 re: 		fclean all
 
-.PHONY: 	all clean fclean re $(LIBFT) $(MLX) norm dependencies wsl2
+.PHONY: 	all clean fclean re $(LIBFT) $(MLX) normi dependencies wsl2
 
 #█████████████████████████████ Custom rules ████████████████████████████████████#
 
@@ -98,9 +98,6 @@ normi:
 dependencies:
 						sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
 						@echo "$(GREEN)Dependencies installed!"
-
-wsl2:
-						export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 
 play:
 						clear					
