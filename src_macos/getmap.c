@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/04/04 16:35:01 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 16:57:53 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ void	so_check_map_dimension(t_game *game)
 	fd = 0;
 	fd = open(game->map.path, O_RDONLY | O_NOFOLLOW);
 	if (fd < 0)
-		so_error("Error\nMap not found\n");
+		so_error("Map not found");
 	line = get_next_line(fd);
 	if (!line)
-		so_error("Error\nMap is empty\n");
+		so_error("Map is empty");
 	game->map.x = ft_strlin(line) - 1;
 	while (line)
 	{
 		if (line[ft_strlin(line) - 1] == '\n')
 			line[ft_strlin(line) - 1] = '\0';
 		if (ft_strlin(line) != game->map.x)
-			so_error("Error\nMap on x is irregular\n");
+			so_error("Map on x is irregular");
 		game->map.y++;
 		tmp = line;
 		line = get_next_line(fd);

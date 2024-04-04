@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/31 00:07:38 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 16:50:13 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	check_number_of_args(int argc)
 {
 	if (argc != 2)
 	{
-		so_error("Error\nInvalid number of arguments\n");
+		so_error("Invalid arguments\nex: ./so_long assets/maps/map.ber");
 	}
 }
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	check_number_of_args(argc);
 	ft_bzero(&game, sizeof(t_game));
 	so_check_extension(argv[1], &game);
-	so_get_len(&game);
+	so_check_map_dimension(&game);
 	so_read_map(&game);
 	so_check_perimeter(&game);
 	so_count_things(&game);
