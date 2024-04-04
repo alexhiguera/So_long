@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:16:32 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 23:55:23 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 16:31:51 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void			so_flood_fill(t_game *game);
 
 // getmap.c
 void			so_check_extension(char *argv1, t_game *game);
-void			so_get_len(t_game *game);
+void			so_check_map_dimension(t_game *game);
 
 // keys.c
 int				so_handler_keys(int keycode, t_game *game);

@@ -6,11 +6,14 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 23:52:55 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 16:35:01 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+/* Checks if the provided file has the correct extension.
+Also stores the file path in the game structure. */
 
 void	so_check_extension(char *argv1, t_game *game)
 {
@@ -24,7 +27,11 @@ void	so_check_extension(char *argv1, t_game *game)
 	game->map.path = argv1;
 }
 
-void	so_get_len(t_game *game)
+/* Checks that all read lines have the same length.
+Also counts the number of lines (map height) and stores
+the length in the game structure. */
+
+void	so_check_map_dimension(t_game *game)
 {
 	int		fd;
 	char	*line;
