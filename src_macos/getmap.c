@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/04/04 16:57:53 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 17:36:21 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,41 @@ void	so_check_map_dimension(t_game *game)
 		free(tmp);
 	}
 	close(fd);
+}
+
+/* Finds the player's starting position on the map and updates the
+coordinates with each move. */
+
+void	so_get_player(t_game *game)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	while (game->map.map[y])
+	{
+		x = 0;
+		while (game->map.map[y][x])
+		{
+			if (game->map.map[y][x] == 'P')
+			{
+				game->player.y = y;
+				game->player.x = x;
+				game->map.map[y][x] = '0';
+			}
+			x++;
+		}
+		y++;
+	}
+}
+
+int	so_destroy_window(t_game *game)
+{
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	mlx_destroy_image(game->mlx, game->img.exit);
+	mlx_destroy_image(game->mlx, game->img.collects);
+	mlx_destroy_image(game->mlx, game->img.floor);
+	mlx_destroy_image(game->mlx, game->img.player);
+	so_free(game);
+	exit(EXIT_SUCCESS);
 }

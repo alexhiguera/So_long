@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/04/04 01:49:20 by alex             ###   ########.fr        #
+#    Updated: 2024/04/04 17:37:19 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,6 @@ SRC 		:= 	$(SRC_DIR)sprites.c 	$(SRC_DIR)errors.c		\
 				$(SRC_DIR)flood_fill.c 	$(SRC_DIR)getmap.c 		\
 				$(SRC_DIR)keys.c 		$(SRC_DIR)so_long.c		\
 				$(SRC_DIR)puts.c 		$(SRC_DIR)read_map.c	\
-				$(SRC_DIR)utils.c
 
 #████████████████████████████ Rules ████████████████████████████████████████████#
 all:$(NAME)

@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/30 23:58:45 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 17:19:00 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ static void	sprites_in_map(t_game *game, int x, int y)
 		put_exit(game, x, y);
 	if (current == 'P')
 		put_player(game, x, y);
-	if (current == 'D')
-		put_player_exit(game, x, y);
 }
 
 void	so_print_sprites(t_game *game)
