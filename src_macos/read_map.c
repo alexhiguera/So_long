@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/04/04 17:05:38 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/04 17:42:52 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ static void	check_other_things(t_game *game, int y, int x)
 		&& game->map.map[y][x] != '\n')
 		so_error("Char on map Invalid");
 }
+
+/* Counts the number of players, collectibles and exits on the map
+and checks if the map is valid. */
 
 void	so_count_things(t_game *game)
 {
