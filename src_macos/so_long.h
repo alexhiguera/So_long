@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:16:32 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/04/04 17:33:12 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/06 01:40:30 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void			so_check_extension(char *argv1, t_game *game);
 void			so_check_map_dimension(t_game *game);
 int				so_destroy_window(t_game *game);
 void			so_get_player(t_game *game);
+void			put_player_exit(t_game *game, int x, int y);
 
 // keys.c
 int				so_handler_keys(int keycode, t_game *game);

@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/04/04 17:36:21 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/06 01:45:51 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,15 @@ int	so_destroy_window(t_game *game)
 	mlx_destroy_image(game->mlx, game->img.player);
 	so_free(game);
 	exit(EXIT_SUCCESS);
+}
+
+/* Places the images of the player and the exit if both
+are in the same place. */
+
+void	put_player_exit(t_game *game, int x, int y)
+{
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.exit, (x * 64),
+		(y * 64));
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.player, (x
+			* 64), (y * 64));
 }
