@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/04/04 17:37:19 by alex             ###   ########.fr        #
+#    Updated: 2024/04/06 01:35:25 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,14 +70,13 @@ $(NAME): 	$(SRC)
 				@make -C $(LIBFT)
 				@mv $(MLX)/libmlx.a bin/
 				@mv $(LIBFT)libft.a bin/
-				@$(CC) $(CFLAGS) $(MLXFLAGS) $(CLEANFLAGS) $(BIN)* $(SRC) -o $(NAME)
+				@$(CC) $(CFLAGS) $(MLXFLAGS) $(BIN)* $(SRC) -o $(NAME)
 				@echo "$(GREEN)So_long Compiled! 🚀$(WHITE)\n"
 
 clean:
 				@rm -rf $(OBJ)
 				@make -C $(LIBFT) clean
 				@make -C $(MLX) clean
-				@rm -rf obj
 
 fclean: 	clean
 				@rm -rf $(NAME)
@@ -91,7 +90,7 @@ re: 		fclean all
 
 normi:
 						@echo "$(YELLOW)Norminette...\n$(WHITE)"
-						@norminette $(SRC)
+						@norminette $(SRC) so_long.h
 						@echo "$(GREEN)\nNorminette Done!\n"
 
 dependencies:
