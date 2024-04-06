@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:09:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/04/06 01:38:01 by alex             ###   ########.fr       */
+/*   Updated: 2024/04/06 02:01:33 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ static void	charge_sprites(t_game *game)
 	game->img.floor = mlx_xpm_file_to_image(game->mlx, FLOOR, &(x), &(y));
 	game->img.exit = mlx_xpm_file_to_image(game->mlx, EXIT, &(x), &(y));
 	game->img.wall = mlx_xpm_file_to_image(game->mlx, WALL, &(x), &(y));
+	if (game->img.collects == 0 || game->img.player == 0 || game->img.floor == 0
+		|| game->img.exit == 0 || game->img.wall == 0)
+		so_error("Could not load sprites\n");
 }
 
 static void	sprites_in_map(t_game *game, int x, int y)

@@ -28,4 +28,4 @@ config.env
 # Ignore binary and executable files
 so_long
 bin
-so_long 2
+so_long*
