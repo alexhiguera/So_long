@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
+#    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 19:29:01 by ahiguera          #+#    #+#              #
-#    Updated: 2024/04/06 01:35:25 by alex             ###   ########.fr        #
+#    Updated: 2025/01/30 21:53:34 by columbux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,26 +30,20 @@ WHITE 			=	\033[0;97m
 
 #█████████████████████████ SO properties ███████████████████████████████████████#
 
-ifeq ($(shell uname), Linux)
-#   for LINUX                                   							   #
-#	Install dependencies with `make dependencies`     						   #
-	OS				=		Linux
-	MLXFLAGS		= 		-L/usr/lib -lXext -lX11 -lm -lz
-	SRC_DIR			=		./src_linux/
-	MLX			 	= 		./includes/mlx_linux/
-	
-else ifeq ($(shell uname), Darwin)
-#   for MACos                                   							   #
+ifeq ($(shell uname -s), Darwin)
+#   for MACos
 	OS				=		MacOS
 	MLXFLAGS		= 		-framework OpenGL -framework AppKit
 	CLEANFLAGS		=		-g -fsanitize=address
-	SRC_DIR			=		./src_macos/
-	MLX			 	= 		./includes/mlx_macos/
-	
+	SRC_DIR			=		./src/
+	MLX			 	= 		./includes/mlx/
+
 else
-# No suported OS                                   							   #
-	OS				=		Unknown
-						@echo $(RED) "No OS detected"
+# No supported OS
+	@echo "No supported OS"
+	@exit 1
+
+endif
 
 endif
 
