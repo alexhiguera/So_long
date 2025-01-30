@@ -21,17 +21,14 @@ In this project, I use the ``MiniLibX`` graphic library to create a window, mani
 
 It involves a series of validations for the map passed as an argument, checks to prevent memory leaks, game engineering, managing windows, events, sprites, and maps.
 
-In my case, I set the challenge of making it run on ``MACos``, ``Linux``, and ``Windows11``, although at the moment, ``Windows`` is **unsupported**. For this challenge, I had to create the game on MACos and later adapt it to Linux, since ``MiniLibX`` was originally built for ``MACos``, and when adapting it to ``Linux``, most functions and hooks had their names changed or even their forms.
-
 ## Requisites ⚠️
 
 If you want to download my repo and try it out, you must consider your operating system.
 
-- 🍎 Macos -> In this operating system it is not necessary to download anything previously, since we access the OpenGL API.
-- 🐧 Linux -> currently no version available, sorry 🥲
-- 🪟 windows -> it was to much, seriusly 💀
+- 🍎 Macos
 
-<!-- ## Compilation Instructions 📐 -->
+- Download the dependencies:
+
 ## Usage 🤟
 
 Once compiled, run the program, and you can interact with the window using the keyboard.
@@ -40,7 +37,12 @@ Once compiled, run the program, and you can interact with the window using the k
 ```bash
 git clone https://github.com/alexhiguera/So_long.git
 ```
-2. Run the compilation command to generate the executable and run game:
+2. Download the dependencies:
+```BASH
+git submodule init
+git submodule update
+```
+3. Run the compilation command to generate the executable and run game:
 ```bash
 make play
 ```
